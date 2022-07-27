@@ -1,50 +1,71 @@
 <template>
-  <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+  <v-app :style="{background: $vuetify.theme.themes[theme].bodybg}">
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+    <nav-bar></nav-bar>
 
-      <v-spacer></v-spacer>
+    <v-navigation-drawer app>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6">
+            Dashboard
+          </v-list-item-title>
+          <!-- svg icon -->
+        </v-list-item-content>
+      </v-list-item>
 
-    <v-main>
-      <router-view />
+      <v-divider></v-divider>
+
+      <v-list dense nav>
+        <v-list-item v-for="item in items" :key="item.title" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-main class="darken-3 white--text">
+      <!-- <router-view /> -->
+      this was main bar
     </v-main>
   </v-app>
 </template>
 
 <script>
-export default {
-  name: "App",
+  import NavBar from '@/components/NavBar.vue'
+  export default {
+    name: "App",
 
-  data: () => ({
-    //
-  }),
-};
+    data: () => {
+      return {
+        items: [{
+            title: 'Dashboard',
+            icon: 'mdi-view-dashboard'
+          },
+          {
+            title: 'Photos',
+            icon: 'mdi-image'
+          },
+          {
+            title: 'About',
+            icon: 'mdi-help-box'
+          },
+        ],
+      }
+    },
+
+    computed: {
+      theme() { return this.$vuetify.theme.dark ? 'dark' : 'light' }
+    },
+
+    components: {
+      NavBar,
+    }
+
+  };
 </script>
