@@ -77,12 +77,22 @@
                         icon: 'taskBorad'   
                     },
                     {
-                        title: 'About',
-                        icon: 'mdi-help-box'
-                    },
-                    {
                         title: 'Analytics',
                         icon: 'Analytics',
+                        badgeData: 2
+                    },
+                    {
+                        title: 'CRM Dashboard',
+                        icon: 'CRM-Dashboard',
+                        badgeData: 2
+                    },
+                    {
+                        title: 'Projects',
+                        icon: 'projects'
+                    },
+                    {
+                        title: 'Setting',
+                        icon: 'Setting',
                         badgeData: 2
                     },
                 ],
