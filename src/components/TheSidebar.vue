@@ -39,17 +39,20 @@
             <v-divider class="mb-9"></v-divider>
 
             <v-list>
-                <v-list-item v-for="item in items" :key="item.title" link>
-                    <v-list-item-icon>
-                        <svg-icon :name="item.icon"></svg-icon> 
-                    </v-list-item-icon>
+                <v-list-item-group v-model="selectedItem" color="primary">
+                    <v-list-item v-for="item in items" :key="item.title" link :to="item.route">
+                        <v-list-item-icon>
+                            <svg-icon :name="item.icon"></svg-icon>
+                        </v-list-item-icon>
 
-                    <v-list-item-content>
-                        <v-list-item-title>{{ item.title }}</v-list-item-title>
-                    </v-list-item-content>
+                        <v-list-item-content>
+                            <v-list-item-title>{{ item.title }}</v-list-item-title>
+                        </v-list-item-content>
 
-                    <v-badge v-if="item.badgeData" :content="item.badgeData" color="blue lighten-3" overlap></v-badge>
-                </v-list-item>
+                        <v-badge v-if="item.badgeData" :content="item.badgeData" color="blue lighten-3" overlap>
+                        </v-badge>
+                    </v-list-item>
+                </v-list-item-group>
 
             </v-list>
 
@@ -67,28 +70,34 @@
     export default {
         data: () => {
             return {
+                selectedItem: 0,
                 items: [{
+                        title: 'Dashboard',
+                        icon: 'CRM-Dashboard',
+                        // badgeData: 2,
+                        route: '/'
+                    },
+                    {
+                        title: 'Projects',
+                        icon: 'projects'
+                    },
+                    {
+                        title: 'Tasks',
+                        icon: 'Tasks'
+                    },
+                    {
                         title: 'Inbox',
                         icon: 'inbox',
                         badgeData: 4
                     },
                     {
                         title: 'Photos',
-                        icon: 'taskBorad'   
+                        icon: 'taskBorad'
                     },
                     {
                         title: 'Analytics',
                         icon: 'Analytics',
                         badgeData: 2
-                    },
-                    {
-                        title: 'CRM Dashboard',
-                        icon: 'CRM-Dashboard',
-                        badgeData: 2
-                    },
-                    {
-                        title: 'Projects',
-                        icon: 'projects'
                     },
                     {
                         title: 'Setting',

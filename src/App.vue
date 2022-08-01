@@ -5,9 +5,8 @@
 
     <the-sidebar></the-sidebar>
 
-    <v-main class="darken-3 ">
+    <v-main class="">
       <router-view />
-      <!-- this was main bar -->
     </v-main>
   </v-app>
 </template>
