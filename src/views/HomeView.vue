@@ -11,7 +11,7 @@
             <p class="mb-0 pl-3">{{data.value}}</p>
           </h5>
 
-          <div v-if="data.icon" class="progressdiv ml-auto" data-percent="70">
+          <div v-if="data.icon" class="progressdiv ml-auto" :data-percent="data.progress">
             <svg-icon :name="data.icon"></svg-icon>
           </div>
         </v-sheet>
@@ -30,12 +30,14 @@
         dashboardOverview: [{
             title: 'Total Projects',
             value: 17,
-            icon: 'progressbar'
+            icon: 'progressbar',
+            progress: 79
           },
           {
             title: 'Total Tasks',
             value: 35,
-            icon: 'progressbar'
+            icon: 'progressbar',
+            progress: 3
           },
           {
             title: 'Total Users',
@@ -45,21 +47,27 @@
       }
     },
 
-    // methods: {
-    //   loadProgressData(){
+    methods: {
+      loadProgressData() {
+        const circles = document.querySelectorAll(".progress");
+        let strokeArray = 2 * 35 * Math.PI;  // strokeArray = 2 * radius * PI 
+        circles.forEach(c => {
+          let childes = c.children;
+          // add Dynamic Stroke DashArray...
+          for(let i=0; i<childes.length; i++) childes[i].style.strokeDasharray = strokeArray
+          let totalProgress = strokeArray;
+          let progress = c.parentElement.getAttribute("data-percent");
+          let result = (totalProgress * progress) / 100;
+          c.querySelector(".bar").style["stroke-dashoffset"] = result;
+        })
 
-    //   }
-    // },
-
-    // mounted(){
-    //   this.loadProgressData()
-    // }
-
-    created: {
-      loadProgressData(){
-        
       }
+    },
+
+    mounted() {
+      this.loadProgressData()
     }
+
   };
 </script>
 
@@ -84,20 +92,28 @@
 
     .progress {
       display: block;
+      display: block;
+      margin: 0 auto;
       overflow: hidden;
       transform: rotate(-90deg) rotateX(180deg);
 
       circle {
         stroke-dashoffset: 0;
         transition: stroke-dashoffset 1s ease;
-        stroke: #a02e2e;
+        stroke: #3B82F6;
         stroke-width: 5px;
-      } // circle
+      }
+
+      // circle
 
       .bar {
-        stroke: grey;
-      } 
-    } //.progress
+        stroke: #dde9f6;
+      }
+    }
 
-  } //.progressdiv
+    //.progress
+
+  }
+
+  //.progressdiv
 </style>

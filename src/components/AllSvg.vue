@@ -80,11 +80,16 @@
     ---------------------------------------->
 
     <!-- progress bar Icon -->
-    <svg v-else-if="name === 'progressbar'" class="progress" width="80" height="80">
-        <circle r="35" cx="40" cy="40" fill="transparent" stroke-dasharray="327" stroke-dashoffset="0">
+    <!-- <svg v-else-if="name === 'progressbar'" class="progress" width="80" height="80">
+        <circle r="35" cx="40" cy="40" fill="transparent" stroke-dasharray="245" stroke-dashoffset="0">
         </circle>
-        <circle class="bar" r="35" cx="40" cy="40" fill="transparent" stroke-dasharray="327" stroke-dashoffset="0"
-            style="stroke-dashoffset: 228.9;">
+        <circle class="bar" r="35" cx="40" cy="40" fill="transparent" stroke-dasharray="245" stroke-dashoffset="0">
+        </circle>
+    </svg> -->
+    <svg v-else-if="name === 'progressbar'" class="progress" width="80" height="80">
+        <circle r="35" cx="40" cy="40" fill="transparent">
+        </circle>
+        <circle class="bar" r="35" cx="40" cy="40" fill="transparent">
         </circle>
     </svg>
 
