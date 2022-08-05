@@ -20,15 +20,27 @@
 
     </v-row>
 
-    <v-row>
+    <v-row class="mb-4">
       <v-col cols="4">
         <v-card class="custom-elevation">
           <v-card-title>Project Status</v-card-title>
-          <v-divider></v-divider>
+          <v-divider class="mb-3"></v-divider>
           <!-- svg graphic details -->
-          <div class="progressdiv d-flex align-center pa-4 mb-3" data-percent="10">
+          <div class="progressdiv d-flex align-center px-4 mb-3" data-percent="10">
             <svg-icon strokeColor="#fb8c00" name="progressbar"></svg-icon>
             <v-card-subtitle>On Hold</v-card-subtitle>
+          </div>
+          <div class="progressdiv d-flex align-center px-4 mb-3" data-percent="30">
+            <svg-icon strokeColor="#2196f3" name="progressbar"></svg-icon>
+            <v-card-subtitle>In Progress</v-card-subtitle>
+          </div>
+          <div class="progressdiv d-flex align-center px-4 mb-3" data-percent="20">
+            <svg-icon strokeColor="#4caf50" name="progressbar"></svg-icon>
+            <v-card-subtitle>Completed</v-card-subtitle>
+          </div>
+          <div class="progressdiv d-flex align-center px-4 mb-3" data-percent="5">
+            <svg-icon strokeColor="#ff5252" name="progressbar"></svg-icon>
+            <v-card-subtitle>Cancelled</v-card-subtitle>
           </div>
           <!-- badges -->
           <v-row class="px-10">
@@ -36,15 +48,21 @@
               <v-badge dot left color="warning" inline class="mr-1"> 9 </v-badge>
             </v-col>
             <v-col>
-              <v-badge dot left color="info" inline class="mr-1"> 9 </v-badge>
+              <v-badge dot left color="info" inline class="mr-1"> 3 </v-badge>
             </v-col>
             <v-col>
-              <v-badge dot left color="success" inline class="mr-1"> 9 </v-badge>
+              <v-badge dot left color="success" inline class="mr-1"> 3 </v-badge>
             </v-col>
             <v-col>
-              <v-badge dot left color="error" inline class="mr-1"> 9</v-badge>
+              <v-badge dot left color="error" inline class="mr-1"> 2</v-badge>
             </v-col>
           </v-row>
+        </v-card>
+      </v-col>
+
+      <v-col cols="8">
+        <v-card class="custom-elevation" style="height:100%">
+          <bar-chart></bar-chart>
         </v-card>
       </v-col>
     </v-row>
@@ -53,8 +71,13 @@
 </template>
 
 <script>
+  import BarChart from '@/components/ThaChart.vue'
   export default {
     name: "HomeView",
+
+    components:{
+      BarChart
+    },
 
     data: () => {
       return {
