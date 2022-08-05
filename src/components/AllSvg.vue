@@ -87,7 +87,7 @@
         </circle>
     </svg> -->
     <svg v-else-if="name === 'progressbar'" class="progress" width="80" height="80">
-        <circle r="35" cx="40" cy="40" fill="transparent">
+        <circle r="35" cx="40" cy="40" :stroke="strokeColor ? strokeColor : '#3B82F6'" fill="transparent">
         </circle>
         <circle class="bar" r="35" cx="40" cy="40" fill="transparent">
         </circle>
@@ -105,7 +105,8 @@
                 required: true,
                 default: ''
             },
-
-        }
+            strokeColor: String
+        },
+// :fill="strokeColor ? strokeColor: 'transparent'"
     }
 </script>
