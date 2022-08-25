@@ -1,4 +1,5 @@
 <template>
+
     <v-navigation-drawer width="302" app color="transparent" id="sidebar">
 
         <router-link to="#" :style="'height: 88px'"
@@ -13,6 +14,7 @@
 
         <div class="px-8">
 
+            <!-- user Profile details -->
             <div class="d-flex align-center py-8 ">
 
                 <div class="avator-icon mr-6">
@@ -39,7 +41,7 @@
                         </v-list-item-icon>
 
                         <v-list-item-content>
-                            <v-list-item-title>{{ item.title }}</v-list-item-title>
+                            <v-list-item-title>{{ item.title}} </v-list-item-title>
                         </v-list-item-content>
 
                         <v-badge v-if="item.badgeData" :content="item.badgeData" color="blue lighten-3" overlap>
@@ -55,7 +57,7 @@
 
 <style>
     #sidebar .v-navigation-drawer__border {
-        background-color: transparent;
+        /* background-color: transparent; */
     }
 </style>
 
@@ -72,20 +74,24 @@
                     },
                     {
                         title: 'Projects',
-                        icon: 'projects'
+                        icon: 'projects',
+                        route: '/project'
                     },
                     {
                         title: 'Tasks',
-                        icon: 'Tasks'
+                        icon: 'Tasks',
+                        route: '/tasks'
                     },
                     {
                         title: 'Inbox',
                         icon: 'inbox',
+                        route: '/inbox',
                         badgeData: 4
                     },
                     {
                         title: 'Photos',
-                        icon: 'taskBorad'
+                        icon: 'taskBorad',
+                        route: '/taskBorad'
                     },
                     {
                         title: 'Analytics',
@@ -100,5 +106,8 @@
                 ],
             }
         },
+        computed: {
+            
+        }
     }
 </script>

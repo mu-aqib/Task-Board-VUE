@@ -1,6 +1,6 @@
 <template>
     <!-- <div> -->
-    <v-app-bar color="transparent" class="" elevation="0" app height="88">
+    <v-app-bar color="transparent" class="px-5" elevation="0" app height="88">
 
         <div class="search-bar d-flex align-center justify-space-between white" color="white">
             <img width="20" src="@/assets/svgIcons/search.svg" />
@@ -19,8 +19,6 @@
                 </v-badge>
             </v-badge>
         </div>
-
-
 
     </v-app-bar>
 

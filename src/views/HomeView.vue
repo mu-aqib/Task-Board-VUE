@@ -1,6 +1,6 @@
 <template>
   <!-- p-9 -->
-  <v-container class="pa-9">
+  <div class="pa-9">
     <h1 class="text-h5 font-weight-bold mb-3">Dashboard</h1>
 
     <v-row>
@@ -18,9 +18,6 @@
         </v-sheet>
       </v-col>
 
-    </v-row>
-
-    <v-row class="mb-4">
       <v-col cols="4">
         <v-card class="custom-elevation">
           <v-card-title>Project Status</v-card-title>
@@ -67,7 +64,7 @@
       </v-col>
     </v-row>
 
-  </v-container>
+  </div>
 </template>
 
 <script>
