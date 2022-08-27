@@ -75,7 +75,7 @@
                     {
                         title: 'Projects',
                         icon: 'projects',
-                        route: '/project'
+                        route: '/projects'
                     },
                     {
                         title: 'Tasks',
