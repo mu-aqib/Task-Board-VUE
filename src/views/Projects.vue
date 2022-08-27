@@ -27,9 +27,33 @@
             <td>{{ item.status }}</td>
             <td>{{ item.priority }}</td>
             <td> 
-              <font-awesome-icon icon="fa-solid fa-user-pen" />
-              <font-awesome-icon icon="fa-solid fa-eye" />
-              <font-awesome-icon icon="fa-solid fa-circle-trash" />
+              <v-btn
+                class="mr-1"
+                fab
+                dark
+                small
+                color="primary"
+              >
+                <font-awesome-icon icon="fa-solid fa-user-pen" />
+              </v-btn>
+              <v-btn
+                class="mr-1"
+                fab
+                dark
+                small
+                color="primary"
+              >
+                <font-awesome-icon icon="fa-solid fa-eye" />
+              </v-btn>
+              <v-btn
+                class="mr-1"
+                fab
+                dark
+                small
+                color="red"
+              >
+                <font-awesome-icon icon="fa-solid fa-trash" />
+              </v-btn>
             </td>
           </tr>
         </tbody>
