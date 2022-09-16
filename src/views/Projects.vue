@@ -33,15 +33,15 @@
               </td>
               <td>
                 <!-- view btn -->
-                <v-btn class="mr-1" fab dark x-small color="primary">
+                <v-btn @click="ProjectDetails('view')" class="mr-1" fab dark x-small color="primary">
                   <font-awesome-icon icon="fa-solid fa-eye" />
                 </v-btn>
                 <!-- edit btn -->
-                <v-btn class="mr-1" fab dark x-small color="primary">
+                <v-btn @click="ProjectDetails('edit')" class="mr-1" fab dark x-small color="primary">
                   <font-awesome-icon icon="fa-solid fa-user-pen" />
                 </v-btn>
                 <!-- delete btn -->
-                <v-btn class="mr-1 dense" x-small fab dark color="red">
+                <v-btn @click="ProjectDetails('delete')" class="mr-1 dense" x-small fab dark color="red">
                   <font-awesome-icon icon="fa-solid fa-trash" />
                 </v-btn>
   
@@ -58,6 +58,8 @@
 
 
 <script>
+import { stat } from 'fs';
+
   export default {
     data() {
       return {
@@ -102,6 +104,17 @@
           return status != 'finished' ? (status === "ongoing" ? 'info' : 'error') : 'success';
         }
       },
+    },
+
+    methods: {
+      ProjectDetails(status){
+        if(status == 'view') 
+          viewDetail()
+        else if( status == 'edit')
+          editDetails()
+        else
+          deleteDetail()
+      }
     }
   }
 </script>
