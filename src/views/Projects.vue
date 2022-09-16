@@ -19,6 +19,7 @@
               </th>
             </tr>
           </thead>
+          
           <tbody>
             <tr v-for="(item, index) in Projects" :key="item.id">
               <td>{{ item.id }}</td>
@@ -58,7 +59,6 @@
 
 
 <script>
-import { stat } from 'fs';
 
   export default {
     data() {

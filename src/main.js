@@ -16,6 +16,7 @@ library.add(fas)
 
 // global components
 import SvgIcon from '@/components/AllSvg.vue'
+import Dialogue from '@/components/Dialogue.vue'
 
 
 Vue.config.productionTip = false;
@@ -23,6 +24,7 @@ Vue.config.productionTip = false;
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.component('svg-icon', SvgIcon);
+Vue.component('vue-dialogue', Dialogue);
 
 
 new Vue({
