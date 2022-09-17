@@ -1,7 +1,5 @@
 <template>
   <v-container>
-    <!-- <v-sheet> -->
-      <!-- </v-sheet> -->
     <div class="px-7">
       <h2 class="text-h5 font-weight-medium grey--text text--darken-3 mb-3">Projects List</h2>
       <v-card outlined class="py-5 px-9 rounded-lg">
@@ -19,7 +17,7 @@
               </th>
             </tr>
           </thead>
-          
+
           <tbody>
             <tr v-for="(item, index) in Projects" :key="item.id">
               <td>{{ item.id }}</td>
@@ -34,26 +32,34 @@
               </td>
               <td>
                 <!-- view btn -->
-                <v-btn @click="ProjectDetails('view')" class="mr-1" fab dark x-small color="primary">
+                <v-btn @click="showModal = true" class="mr-1" fab dark x-small color="primary">
                   <font-awesome-icon icon="fa-solid fa-eye" />
                 </v-btn>
                 <!-- edit btn -->
-                <v-btn @click="ProjectDetails('edit')" class="mr-1" fab dark x-small color="primary">
+                <v-btn @click="showModal = true" class="mr-1" fab dark x-small color="primary">
                   <font-awesome-icon icon="fa-solid fa-user-pen" />
                 </v-btn>
                 <!-- delete btn -->
-                <v-btn @click="ProjectDetails('delete')" class="mr-1 dense" x-small fab dark color="red">
+                <v-btn @click="showModal = true" class="mr-1 dense" x-small fab dark color="red">
                   <font-awesome-icon icon="fa-solid fa-trash" />
                 </v-btn>
   
               </td>
             </tr>
           </tbody>
-  
+          
         </v-simple-table>
       </v-card>
+
+
     </div>
+
+    <!-- dialogues -->
+    <vue-dialogue :active="showModal" @close="showModal = false">
+      
+    </vue-dialogue>
   </v-container>
+
 
 </template>
 
@@ -85,6 +91,7 @@
             priority: 'high'
           },
         ],
+        showModal: false,
       }
     },
 
