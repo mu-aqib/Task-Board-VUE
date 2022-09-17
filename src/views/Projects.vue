@@ -55,9 +55,11 @@
     </div>
 
     <!-- dialogues -->
-    <vue-dialogue :active="showModal" @close="showModal = false">
-      
-    </vue-dialogue>
+    <Teleport to="body">
+      <vue-dialogue :active="showModal" @close="showModal = false">
+        
+      </vue-dialogue>
+  </Teleport>
   </v-container>
 
 
