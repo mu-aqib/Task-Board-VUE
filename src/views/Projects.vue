@@ -32,7 +32,7 @@
               </td>
               <td>
                 <!-- view btn -->
-                <v-btn @click="showModal = true" class="mr-1" fab dark x-small color="primary">
+                <v-btn @click="modalFunc('view-modal')" class="mr-1" fab dark x-small color="primary">
                   <font-awesome-icon icon="fa-solid fa-eye" />
                 </v-btn>
                 <!-- edit btn -->
@@ -54,27 +54,37 @@
 
     </div>
 
-
-
     <!-- callingdialogues -->
     <!-- <Teleport to="body"> -->
-    <vue-dialog :active="showModal" @close="showModal = false">
+    <vue-dialog v-if="modal == 'view-modal'" :active="showModal" @close="showModal = false">
       <template #title> View Project Details </template>
       <template #description>
         <v-row class="border border-3">
           <v-col cols="12" sm="6" class="py-0 mb-3">
-            <v-text-field label="placeholder" hide-details outlined dense></v-text-field>
+            <v-text-field label="Project" hide-details outlined dense></v-text-field>
           </v-col>
           <v-col cols="12" sm="6" class="py-0 mb-3">
-            <v-text-field label="placeholder" hide-details outlined dense></v-text-field>
+            <v-select
+              :items="['ongoing', 'finished', 'onhold']"
+              label="status"
+              dense outlined hide-details
+            ></v-select>
           </v-col>
           <v-col cols="12" sm="6" class="py-0 mb-3">
-            <v-text-field label="placeholder" hide-details outlined dense></v-text-field>
+            <v-select
+              :items="['medium', 'low', 'high']"
+              label="priority"
+              dense outlined hide-details
+            ></v-select>
+          </v-col>
+          <v-col cols="12" sm="6" class="py-0 mb-3">
+            <v-date-picker v-model="activeDatepicker"></v-date-picker>
           </v-col>
         </v-row>
       </template>
     </vue-dialog>
     <!-- </Teleport> -->
+
   </v-container>
 
 
@@ -108,6 +118,9 @@
           },
         ],
         showModal: false,
+        modal: '',
+
+        activeDatepicker: (new Date(Date.now() - (new Date()).getTimezoneOffset() * 60000)).toISOString().substr(0, 10)
       }
     },
 
@@ -137,6 +150,11 @@
           editDetails()
         else
           deleteDetail()
+      },
+
+      modalFunc(val){
+        this.modal = val;
+        this.showModal = true;
       }
     }
   }
