@@ -24,7 +24,7 @@ Vue.config.productionTip = false;
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.component('svg-icon', SvgIcon);
-Vue.component('vue-dialogue', Dialogue);
+Vue.component('vue-dialog', Dialogue);
 
 
 new Vue({

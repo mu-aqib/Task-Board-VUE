@@ -55,11 +55,6 @@
     </v-navigation-drawer>
 </template>
 
-<style>
-    #sidebar .v-navigation-drawer__border {
-        /* background-color: transparent; */
-    }
-</style>
 
 <script>
     export default {

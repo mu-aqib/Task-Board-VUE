@@ -4,7 +4,7 @@
       <h2 class="text-h5 font-weight-medium grey--text text--darken-3 mb-3">Projects List</h2>
       <v-card outlined class="py-5 px-9 rounded-lg">
         <v-simple-table>
-  
+
           <thead>
             <tr>
               <th> S.No </th>
@@ -24,11 +24,11 @@
               <td>{{ item.title }}</td>
               <td>{{ item.due_date }}</td>
               <td>
-                <v-badge class="p-4" :color="status(index)"  inline :content="item.status"> </v-badge>
+                <v-badge class="p-4" :color="status(index)" inline :content="item.status"> </v-badge>
               </td>
               <td>
                 <!-- {{ item.priority }} -->
-                <v-badge class="p-4" :color="priority(index)"  inline :content="item.priority"> </v-badge>
+                <v-badge class="p-4" :color="priority(index)" inline :content="item.priority"> </v-badge>
               </td>
               <td>
                 <!-- view btn -->
@@ -43,23 +43,38 @@
                 <v-btn @click="showModal = true" class="mr-1 dense" x-small fab dark color="red">
                   <font-awesome-icon icon="fa-solid fa-trash" />
                 </v-btn>
-  
+
               </td>
             </tr>
           </tbody>
-          
+
         </v-simple-table>
       </v-card>
 
 
     </div>
 
-    <!-- dialogues -->
-    <Teleport to="body">
-      <vue-dialogue :active="showModal" @close="showModal = false">
-        
-      </vue-dialogue>
-  </Teleport>
+
+
+    <!-- callingdialogues -->
+    <!-- <Teleport to="body"> -->
+    <vue-dialog :active="showModal" @close="showModal = false">
+      <template #title> View Project Details </template>
+      <template #description>
+        <v-row class="border border-3">
+          <v-col cols="12" sm="6" class="py-0 mb-3">
+            <v-text-field label="placeholder" hide-details outlined dense></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" class="py-0 mb-3">
+            <v-text-field label="placeholder" hide-details outlined dense></v-text-field>
+          </v-col>
+          <v-col cols="12" sm="6" class="py-0 mb-3">
+            <v-text-field label="placeholder" hide-details outlined dense></v-text-field>
+          </v-col>
+        </v-row>
+      </template>
+    </vue-dialog>
+    <!-- </Teleport> -->
   </v-container>
 
 
@@ -67,7 +82,6 @@
 
 
 <script>
-
   export default {
     data() {
       return {
@@ -98,17 +112,17 @@
     },
 
     computed: {
-      priority(){
+      priority() {
         let priority = '';
-        return (i)=> { 
+        return (i) => {
           priority = this.Projects[i].priority;
           return priority != 'high' ? (priority === "medium" ? 'warning' : 'primary') : 'error';
         }
       },
 
-      status(){
+      status() {
         let status = '';
-        return (i)=> { 
+        return (i) => {
           status = this.Projects[i].status;
           return status != 'finished' ? (status === "ongoing" ? 'info' : 'error') : 'success';
         }
@@ -116,10 +130,10 @@
     },
 
     methods: {
-      ProjectDetails(status){
-        if(status == 'view') 
+      ProjectDetails(status) {
+        if (status == 'view')
           viewDetail()
-        else if( status == 'edit')
+        else if (status == 'edit')
           editDetails()
         else
           deleteDetail()
