@@ -36,11 +36,11 @@
                   <font-awesome-icon icon="fa-solid fa-eye" />
                 </v-btn>
                 <!-- edit btn -->
-                <v-btn @click="showModal = true" class="mr-1" fab dark x-small color="primary">
+                <v-btn @click="modalFunc('edit-modal')" class="mr-1" fab dark x-small color="primary">
                   <font-awesome-icon icon="fa-solid fa-user-pen" />
                 </v-btn>
                 <!-- delete btn -->
-                <v-btn @click="showModal = true" class="mr-1 dense" x-small fab dark color="red">
+                <v-btn @click="modalFunc()" class="mr-1 dense" x-small fab dark color="red">
                   <font-awesome-icon icon="fa-solid fa-trash" />
                 </v-btn>
 
@@ -57,10 +57,19 @@
     <!-- callingdialogues -->
     <!-- <Teleport to="body"> -->
     <vue-dialog :active="showModal" @close="showModal = false">
-      <div v-if="modal == 'view-modal'">
-        <template #title> View Project Details </template>
+ 
+        <template #title> 
+          <span v-if="modal == 'view-modal'"> View Project Details  </span>
+          <span v-else-if="modal == 'edit-modal'"> edit project details </span>
+          
+        </template>
         <template #description>
-          <v-row class="border border-3">
+          
+          <v-row v-if="modal == 'view-modal'">
+            
+          </v-row>
+          
+          <v-row class="border border-3" v-else-if="modal == 'edit-modal'">
             <v-col cols="12" sm="6" class="py-0 mb-3">
               <v-text-field label="Project" hide-details outlined dense></v-text-field>
             </v-col>
@@ -82,8 +91,13 @@
               <v-date-picker v-model="activeDatepicker"></v-date-picker>
             </v-col>
           </v-row>
+
+          <h3 v-else>
+            Are you sure you want to delete ?
+          </h3>
+
         </template>
-      </div>
+        
     </vue-dialog>
     <!-- </Teleport> -->
 
@@ -154,7 +168,7 @@
           deleteDetail()
       },
 
-      modalFunc(val){
+      modalFunc(val = null){
         this.modal = val;
         this.showModal = true;
       }
