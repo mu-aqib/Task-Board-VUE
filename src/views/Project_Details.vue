@@ -3,7 +3,7 @@
         <div class="px-7">
             <v-row>
                 <v-col cols="4" v-for="data in project_overview" :key="data.title">
-                    <v-sheet color="d-flex custom-elevation" class="pa-4" style="height:100%" rounded>
+                    <v-sheet class="d-flex custom-elevation pa-4" style="height:100%" rounded>
 
                         <div class="grey--text text--darken-3">
                             <span class="text-subtitle-1"> {{data.title}} </span>
@@ -20,54 +20,30 @@
                 </v-col>
 
                 <v-col cols="4">
-                    <v-sheet rounded class="pa-4" color="white">
-                        <div class="d-flex">
+
+                    <v-sheet  rounded class="pa-4" color="white">
+                        <h2 class="text-subtitle-1 grey--text text--darken-3">
+                            Projects Members
+                        </h2>
+                        <v-divider class="my-5"></v-divider>
+                        <div class="d-flex mb-5" v-for="(user, i) in users" :key="i">
+
                             <v-avatar size="40" color="primary white--text" class="mr-4">
-                                VA
+                                {{user.img}}
                             </v-avatar>
 
                             <p class="grey--text text--darken-3 text-subtitle-2 mb-0">
-                                <span class="d-block"> Owner </span>
-                                owner@example.com
+                                <span class="d-block"> {{user.username}} </span>
+                                {{user.email}}
                             </p>
-                        </div>
-                    </v-sheet>
-                    <v-sheet rounded class="pa-4" color="white">
-                        <div class="d-flex">
-                            <v-avatar size="40" color="primary white--text" class="mr-4">
-                                VA
-                            </v-avatar>
 
-                            <p class="grey--text text--darken-3 text-subtitle-2 mb-0">
-                                <span class="d-block"> Owner </span>
-                                owner@example.com
-                            </p>
                         </div>
                     </v-sheet>
-                    <v-sheet rounded class="pa-4" color="white">
-                        <div class="d-flex">
-                            <v-avatar size="40" color="primary white--text" class="mr-4">
-                                VA
-                            </v-avatar>
 
-                            <p class="grey--text text--darken-3 text-subtitle-2 mb-0">
-                                <span class="d-block"> Owner </span>
-                                owner@example.com
-                            </p>
-                        </div>
-                    </v-sheet>
-                    <v-sheet rounded class="pa-4" color="white">
-                        <div class="d-flex">
-                            <v-avatar size="40" color="primary white--text" class="mr-4">
-                                VA
-                            </v-avatar>
+                </v-col>
 
-                            <p class="grey--text text--darken-3 text-subtitle-2 mb-0">
-                                <span class="d-block"> Owner </span>
-                                owner@example.com
-                            </p>
-                        </div>
-                    </v-sheet>
+                <v-col cols="8">
+
                 </v-col>
             </v-row>
         </div>
@@ -105,6 +81,24 @@
                         },
                         icon: 'progressbar',
                         progress: 35
+                    },
+                ],
+
+                users: [
+                    {
+                        img: 'O',
+                        username: 'Owner',
+                        email: 'owner@example.com'
+                    },
+                    {
+                        img: 'MA',
+                        username: 'Muhammad Aqib',
+                        email: 'm_aqib@example.com'
+                    },
+                    {
+                        img: 'OA',
+                        username: 'Omer Ahmed',
+                        email: 'ahmed@example.com'
                     },
                 ]
             }
