@@ -3,7 +3,7 @@
         <div class="px-7">
             <v-row>
                 <v-col cols="4" v-for="data in project_overview" :key="data.title">
-                    <v-sheet color="white d-flex custom-elevation" class="pa-4" style="height:100%" rounded>
+                    <v-sheet color="d-flex custom-elevation" class="pa-4" style="height:100%" rounded>
 
                         <div class="grey--text text--darken-3">
                             <span class="text-subtitle-1"> {{data.title}} </span>
@@ -17,9 +17,57 @@
                         </div>
 
                     </v-sheet>
+                </v-col>
 
+                <v-col cols="4">
+                    <v-sheet rounded class="pa-4" color="white">
+                        <div class="d-flex">
+                            <v-avatar size="40" color="primary white--text" class="mr-4">
+                                VA
+                            </v-avatar>
 
-                    
+                            <p class="grey--text text--darken-3 text-subtitle-2 mb-0">
+                                <span class="d-block"> Owner </span>
+                                owner@example.com
+                            </p>
+                        </div>
+                    </v-sheet>
+                    <v-sheet rounded class="pa-4" color="white">
+                        <div class="d-flex">
+                            <v-avatar size="40" color="primary white--text" class="mr-4">
+                                VA
+                            </v-avatar>
+
+                            <p class="grey--text text--darken-3 text-subtitle-2 mb-0">
+                                <span class="d-block"> Owner </span>
+                                owner@example.com
+                            </p>
+                        </div>
+                    </v-sheet>
+                    <v-sheet rounded class="pa-4" color="white">
+                        <div class="d-flex">
+                            <v-avatar size="40" color="primary white--text" class="mr-4">
+                                VA
+                            </v-avatar>
+
+                            <p class="grey--text text--darken-3 text-subtitle-2 mb-0">
+                                <span class="d-block"> Owner </span>
+                                owner@example.com
+                            </p>
+                        </div>
+                    </v-sheet>
+                    <v-sheet rounded class="pa-4" color="white">
+                        <div class="d-flex">
+                            <v-avatar size="40" color="primary white--text" class="mr-4">
+                                VA
+                            </v-avatar>
+
+                            <p class="grey--text text--darken-3 text-subtitle-2 mb-0">
+                                <span class="d-block"> Owner </span>
+                                owner@example.com
+                            </p>
+                        </div>
+                    </v-sheet>
                 </v-col>
             </v-row>
         </div>
@@ -55,6 +103,8 @@
                             total: 25,
                             completed: 15
                         },
+                        icon: 'progressbar',
+                        progress: 35
                     },
                 ]
             }
