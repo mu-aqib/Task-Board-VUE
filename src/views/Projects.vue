@@ -20,7 +20,7 @@
 
           <tbody>
             <tr v-for="(item, index) in Projects" :key="item.id">
-              <td>{{ item.id }}</td>
+              <td>{{ index }}</td>
               <td>{{ item.title }}</td>
               <td>{{ item.due_date }}</td>
               <td>
@@ -32,11 +32,11 @@
               </td>
               <td>
                 <!-- view btn -->
-                <v-btn @click="modalFunc('view-modal')" class="mr-1" fab dark x-small color="primary">
+                <v-btn :to="`projects/${item.id}`" class="mr-1" fab dark x-small color="primary">
                   <font-awesome-icon icon="fa-solid fa-eye" />
                 </v-btn>
                 <!-- edit btn -->
-                <v-btn @click="modalFunc('edit-modal')" class="mr-1" fab dark x-small color="primary">
+                <v-btn :to="`projects/${item.id}/edit`" class="mr-1" fab dark x-small color="primary">
                   <font-awesome-icon icon="fa-solid fa-user-pen" />
                 </v-btn>
                 <!-- delete btn -->
@@ -49,6 +49,8 @@
           </tbody>
 
         </v-simple-table>
+
+        <router-view />
       </v-card>
 
 
@@ -109,6 +111,7 @@
 
 <script>
   export default {
+
     data() {
       return {
         Projects: [{
@@ -173,5 +176,6 @@
         this.showModal = true;
       }
     }
+
   }
 </script>

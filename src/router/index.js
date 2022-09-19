@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import HomeView from "../views/HomeView.vue";
-// import ProjecDetails from '../views/Details.vue'
+// import ProjecDetails from '../views/Project_Details.vue'
 
 Vue.use(VueRouter);
 
@@ -14,14 +14,13 @@ const routes = [
   {
     path: "/projects",
     name: "projects",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    // route level code-splitting which is lazy-loaded when the route is visited.
     component: () => import("../views/Projects.vue"),
-    // children: [{
-    //   path: 'detail',
-    //   component: () => import("../views/Details.vue")
-    // }]
+  },
+  {
+    path: "/projects/:id",
+    name: "details",
+    component: () => import("../views/Project_Details.vue"),
   },
 ];
 

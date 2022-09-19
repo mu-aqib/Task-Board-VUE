@@ -101,11 +101,14 @@
     methods: {
       loadProgressData() {
         const circles = document.querySelectorAll(".progress");
+       
         let strokeArray = 2 * 35 * Math.PI; // strokeArray = 2 * radius * PI 
         circles.forEach(c => {
           let childes = c.children;
           // add Dynamic Stroke DashArray...
-          for (let i = 0; i < childes.length; i++) childes[i].style.strokeDasharray = strokeArray
+          for (let i = 0; i < childes.length; i++) {
+            childes[i].style.strokeDasharray = strokeArray
+          }
           let totalProgress = strokeArray;
           let progress = c.parentElement.getAttribute("data-percent");
           let result = (totalProgress * progress) / 100;
