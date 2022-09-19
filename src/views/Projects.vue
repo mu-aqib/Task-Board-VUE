@@ -60,45 +60,9 @@
     <!-- <Teleport to="body"> -->
     <vue-dialog :active="showModal" @close="showModal = false">
  
-        <template #title> 
-          <span v-if="modal == 'view-modal'"> View Project Details  </span>
-          <span v-else-if="modal == 'edit-modal'"> edit project details </span>
-          
-        </template>
-        <template #description>
-          
-          <v-row v-if="modal == 'view-modal'">
-            
-          </v-row>
-          
-          <v-row class="border border-3" v-else-if="modal == 'edit-modal'">
-            <v-col cols="12" sm="6" class="py-0 mb-3">
-              <v-text-field label="Project" hide-details outlined dense></v-text-field>
-            </v-col>
-            <v-col cols="12" sm="6" class="py-0 mb-3">
-              <v-select
-                :items="['ongoing', 'finished', 'onhold']"
-                label="status"
-                dense outlined hide-details
-              ></v-select>
-            </v-col>
-            <v-col cols="12" sm="6" class="py-0 mb-3">
-              <v-select
-                :items="['medium', 'low', 'high']"
-                label="priority"
-                dense outlined hide-details
-              ></v-select>
-            </v-col>
-            <v-col cols="12" sm="6" class="py-0 mb-3">
-              <v-date-picker v-model="activeDatepicker"></v-date-picker>
-            </v-col>
-          </v-row>
-
-          <h3 v-else>
-            Are you sure you want to delete ?
-          </h3>
-
-        </template>
+      <template #description>
+        Are you sure you want to delete ?
+      </template>
         
     </vue-dialog>
     <!-- </Teleport> -->
@@ -162,19 +126,11 @@
     },
 
     methods: {
-      ProjectDetails(status) {
-        if (status == 'view')
-          viewDetail()
-        else if (status == 'edit')
-          editDetails()
-        else
-          deleteDetail()
-      },
 
-      modalFunc(val = null){
-        this.modal = val;
+      modalFunc(){
         this.showModal = true;
       }
+
     }
 
   }

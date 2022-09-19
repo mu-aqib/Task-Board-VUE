@@ -21,11 +21,20 @@
 
                 <v-col cols="4">
 
-                    <v-sheet  rounded class="pa-4" color="white">
-                        <h2 class="text-subtitle-1 grey--text text--darken-3">
-                            Projects Members
+                    <v-sheet rounded class="pa-4 custom-elevation" color="white">
+
+                        <h2 class="text-subtitle-1 grey--text text--darken-3 d-flex align-center">
+                            <span>Members</span>
+
+                            <v-spacer></v-spacer>
+
+                            <v-btn @click="showModal = true" class="mr-1" fab dark x-small color="primary">
+                                <font-awesome-icon icon="fa-solid fa-add" />
+                            </v-btn>
                         </h2>
+
                         <v-divider class="my-5"></v-divider>
+
                         <div class="d-flex mb-5" v-for="(user, i) in users" :key="i">
 
                             <v-avatar size="40" color="primary white--text" class="mr-4">
@@ -38,24 +47,43 @@
                             </p>
 
                         </div>
+
                     </v-sheet>
 
                 </v-col>
 
                 <v-col cols="8">
-
+                    <v-sheet class="custom-elevation">
+                        ssdjkfkdsh
+                    </v-sheet>
                 </v-col>
             </v-row>
         </div>
+
+        <vue-dialog :active="showModal" @close="showModal = false">
+            <template #title>
+                Invite Member
+            </template>
+            <template #description>
+                <div class="search-bar custom-elevation pa-0" style="width:100%" >
+                    <input type="text" placeholder="enter email" 
+                        class="pa-3 px-5 d-block" style="width:100%" 
+                    />
+                </div>
+            </template>
+        </vue-dialog>
     </v-container>
+
 </template>
 
+
 <script>
-    export default{
-        data(){
-            return{
-                project_overview: [
-                    {
+    export default {
+        data() {
+            return {
+                showModal: false,
+
+                project_overview: [{
                         title: 'Task Done',
                         tasks: {
                             total: 17,
@@ -84,8 +112,7 @@
                     },
                 ],
 
-                users: [
-                    {
+                users: [{
                         img: 'O',
                         username: 'Owner',
                         email: 'owner@example.com'
@@ -100,14 +127,14 @@
                         username: 'Omer Ahmed',
                         email: 'ahmed@example.com'
                     },
-                ]
+                ],
             }
         },
 
         methods: {
             loadProgressData() {
                 const circles = document.querySelectorAll(".progress");
-            
+
                 let strokeArray = 2 * 35 * Math.PI; // strokeArray = 2 * radius * PI 
                 circles.forEach(c => {
                     let childes = c.children;
