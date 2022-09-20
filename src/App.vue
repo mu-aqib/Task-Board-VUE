@@ -56,6 +56,7 @@
     height: 100%;
   }
   .v-application p {
+    font-size: 14px;
     margin-bottom: 0;
   }
 </style>

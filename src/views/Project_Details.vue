@@ -58,10 +58,13 @@
 
                         <v-divider class="my-3"></v-divider>
                         
-                        <p>
+                        <p class="mb-3 grey--text text--darken-4">
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
                             Eius dolore libero consequatur distinctio eligendi quam consectetur itaque officiis 
                             nesciunt obcaecati, eveniet fugiat vel, similique aliquam excepturi aperiam eum autem fuga.
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                            Eius dolore libero consequatur distinctio eligendi quam consectetur itaque officiis 
+                            nesciunt obcaecati, eveniet fugiat vel, similique aliquam excepturi.
                         </p>
                         
                         <v-divider class="mb-3 mt-auto"></v-divider>
