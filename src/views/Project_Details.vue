@@ -65,11 +65,34 @@
                 Invite Member
             </template>
             <template #description>
-                <div class="search-bar custom-elevation pa-0" style="width:100%" >
+                <div class="search-bar custom-elevation pa-0 mb-4" style="width:100%" >
                     <input type="text" placeholder="enter email" 
                         class="pa-3 px-5 d-block" style="width:100%" 
                     />
                 </div>
+
+                <v-row>
+                    <v-col cols="6">
+                        <v-sheet class="text-center custom-elevation pa-5">
+                            <div class="profile mb-3">
+                                <v-avatar size="50" color="primary white--text">
+                                    O
+                                </v-avatar>
+                            </div>
+
+                            <div class="description">
+                                <p class="grey--text text--darken-3 text-subtitle-2 mb-3">
+                                    <span class="d-block"> Owner </span>
+                                    Owner@example.com
+                                </p>
+
+                                <v-btn class="mr-1" dark x-small color="primary">
+                                    invite
+                                </v-btn>
+                            </div>
+                        </v-sheet>
+                    </v-col>
+                </v-row>
             </template>
         </vue-dialog>
     </v-container>
