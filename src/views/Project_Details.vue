@@ -65,31 +65,63 @@
                 Invite Member
             </template>
             <template #description>
-                <div class="search-bar custom-elevation pa-0 mb-4" style="width:100%" >
-                    <input type="text" placeholder="enter email" 
-                        class="pa-3 px-5 d-block" style="width:100%" 
-                    />
+                <div class="text-right">
+                    <div class="search-bar custom-elevation pa-0 mb-4" style="width:100%" >
+                        <input type="text" placeholder="enter email" 
+                            class="pa-3 px-5 d-block" style="width:100%" 
+                        />
+                    </div>
+
+                    <v-btn class="mr-1" dark color="green">
+                        invite
+                    </v-btn>
                 </div>
 
+                <v-divider class="my-3"></v-divider>
+
+                <p class="text-center"> Invite user from contact list </p>
+
                 <v-row>
-                    <v-col cols="6">
+                    <v-col cols="4">
                         <v-sheet class="text-center custom-elevation pa-5">
                             <div class="profile mb-3">
-                                <v-avatar size="50" color="primary white--text">
-                                    O
+                                <v-avatar color="primary white--text">
+                                    <v-img src="https://demo.rajodiya.com/taskgo-saas/storage/avatars/7_avatar1595047124.jpg">
+
+                                    </v-img>
                                 </v-avatar>
                             </div>
 
-                            <div class="description">
-                                <p class="grey--text text--darken-3 text-subtitle-2 mb-3">
-                                    <span class="d-block"> Owner </span>
-                                    Owner@example.com
-                                </p>
+                            <!-- <div class="description"> -->
+                                <h5 class="grey--text text--darken-3 text-subtitle-2 mb-3">
+                                    Owner
+                                </h5>
 
-                                <v-btn class="mr-1" dark x-small color="primary">
+                                <v-btn class="mr-1" dark x-small color="secondary">
                                     invite
                                 </v-btn>
+                            <!-- </div> -->
+                        </v-sheet>
+                    </v-col>
+                    <v-col cols="4">
+                        <v-sheet class="text-center custom-elevation pa-5">
+                            <div class="profile mb-3">
+                                <v-avatar color="primary white--text">
+                                    <v-img src="https://cdn.vuetifyjs.com/images/john.jpg">
+
+                                    </v-img>
+                                </v-avatar>
                             </div>
+
+                            <!-- <div class="description"> -->
+                                <h5 class="grey--text text--darken-3 text-subtitle-2 mb-3">
+                                    Owner
+                                </h5>
+
+                                <v-btn class="mr-1" dark x-small color="secondary">
+                                    invite
+                                </v-btn>
+                            <!-- </div> -->
                         </v-sheet>
                     </v-col>
                 </v-row>
