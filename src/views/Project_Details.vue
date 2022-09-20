@@ -82,6 +82,32 @@
                         
                     </v-sheet>
                 </v-col>
+
+
+                <v-col cols="7">
+                    <v-sheet class="custom-elevation pa-5 h-100 d-flex flex-column">
+                        <h4 class="grey--text text--darken-3 d-flex align-center">
+                            <span>Milestones (0)</span>
+
+                            <v-spacer></v-spacer>
+
+                            <v-btn @click="showModal = true" class="mr-1" fab dark x-small color="green">
+                                <font-awesome-icon icon="fa-solid fa-add" />
+                            </v-btn>
+                        </h4>
+
+                        <v-divider class="my-3"></v-divider>
+                        
+                    </v-sheet>
+                </v-col>
+
+                <v-col >
+                    <v-sheet class="custom-elevation pa-5 h-100 d-flex flex-column">
+                        <h3 class="grey--text text--darken-3">Project Tasks </h3>
+                    </v-sheet>
+                </v-col>
+
+
             </v-row>
         </div>
 
