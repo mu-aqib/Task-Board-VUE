@@ -98,10 +98,26 @@
 
                         <v-divider class="my-3"></v-divider>
 
-                        <div>
-                            <h6 class="text-caption grey--text text--darken-3">Release of Product Samples
-                                <v-badge dot left color="warning" inline class="mr-1"> onhold </v-badge>0 Tasks
-                            </h6>
+                        <div class="d-flex">
+                            <v-flex>
+                                <h6 class="text-subtitle-2 grey--text text--darken-3 mb-3 d-flex">
+                                    Release of Product Samples
+
+                                    <v-badge class="d-inline-block ml-auto mr-3" color="warning" inline content="onhold"> </v-badge>
+
+                                    <span>0 Tasks</span>
+                                </h6>
+                                <v-progress-linear height="25" value="90"> 15% </v-progress-linear>
+                            </v-flex>
+                            
+                            <div class="">
+                                
+                                <font-awesome-icon class="info--text" icon="fa-solid fa-eye" />
+                                
+                                <font-awesome-icon class="info--text mx-2" icon="fa-solid fa-user-pen" />
+                                
+                                <font-awesome-icon class="red--text" icon="fa-solid fa-trash" />
+                            </div>
                         </div>
                         
                     </v-sheet>
