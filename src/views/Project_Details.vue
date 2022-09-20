@@ -97,6 +97,12 @@
                         </h4>
 
                         <v-divider class="my-3"></v-divider>
+
+                        <div>
+                            <h6 class="text-caption grey--text text--darken-3">Release of Product Samples
+                                <v-badge dot left color="warning" inline class="mr-1"> onhold </v-badge>0 Tasks
+                            </h6>
+                        </div>
                         
                     </v-sheet>
                 </v-col>
