@@ -53,8 +53,30 @@
                 </v-col>
 
                 <v-col cols="8">
-                    <v-sheet class="custom-elevation">
-                        ssdjkfkdsh
+                    <v-sheet class="custom-elevation pa-5 h-100 d-flex flex-column">
+                        <h3 class="grey--text text--darken-3">Project overview</h3>
+
+                        <v-divider class="my-3"></v-divider>
+                        
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+                            Eius dolore libero consequatur distinctio eligendi quam consectetur itaque officiis 
+                            nesciunt obcaecati, eveniet fugiat vel, similique aliquam excepturi aperiam eum autem fuga.
+                        </p>
+                        
+                        <v-divider class="mb-3 mt-auto"></v-divider>
+
+                        <div class="d-flex justify-space-between">
+                            <p>
+                                <span class="grey--text text--darken-2 d-block text-caption">Start date:</span>
+                                21 Sep 2022
+                            </p>
+                            <p>
+                                <span class="grey--text text--darken-2 d-block text-caption">End date:</span>
+                                30 Sep 2022
+                            </p>
+                        </div>
+                        
                     </v-sheet>
                 </v-col>
             </v-row>
