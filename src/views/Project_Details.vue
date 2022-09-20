@@ -124,6 +124,27 @@
                             <!-- </div> -->
                         </v-sheet>
                     </v-col>
+                    <v-col cols="4">
+                        <v-sheet class="text-center custom-elevation pa-5">
+                            <div class="profile mb-3">
+                                <v-avatar color="primary white--text">
+                                    <v-img src="https://avatars0.githubusercontent.com/u/9064066?v=4&s=460">
+
+                                    </v-img>
+                                </v-avatar>
+                            </div>
+
+                            <!-- <div class="description"> -->
+                                <h5 class="grey--text text--darken-3 text-subtitle-2 mb-3">
+                                    Johny Depp
+                                </h5>
+
+                                <v-btn class="mr-1" dark x-small color="secondary">
+                                    invite
+                                </v-btn>
+                            <!-- </div> -->
+                        </v-sheet>
+                    </v-col>
                 </v-row>
             </template>
         </vue-dialog>

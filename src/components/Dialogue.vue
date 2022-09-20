@@ -3,8 +3,12 @@
     <v-dialog :value="active" width="600" persistent>
         <v-card>
 
-            <v-card-title primary-title>
+            <v-card-title class="d-flex justify-space-between">
                 <slot name="title"></slot>
+
+                <v-btn @click="$emit('close')" class="mr-1" fab dark x-small color="primary">
+                    <font-awesome-icon icon="fa-solid fa-close" />
+                </v-btn>
             </v-card-title>
 
             <v-divider></v-divider>
